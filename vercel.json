@@ -1,7 +1,1 @@
-{
-    "build": {
-      "env": {
-        "NEXT_PUBLIC_SKIP_ESLINT": "true"
-      }
-    }
-  }
+{ "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }] }
