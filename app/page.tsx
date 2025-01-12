@@ -5,7 +5,7 @@ import Stats from './components/stats'
 import TrendingSection from './components/trending-section'
 import TopArtists from './components/top-artists'
 import Footer from './components/footer'
-import { Amatic_SC, Poppins, Permanent_Marker, Signika, Oleo_Script, Doto, Caveat_Brush } from 'next/font/google'
+import { Signika, Caveat_Brush } from 'next/font/google'
 const signika = Signika({
   subsets: ['latin'],
   weight: ['600'],
