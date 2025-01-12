@@ -1,101 +1,140 @@
-import Image from "next/image";
+'use client'
+import Image from 'next/image'
+import Navbar from './components/navbar'
+import Stats from './components/stats'
+import TrendingSection from './components/trending-section'
+import TopArtists from './components/top-artists'
+import Partners from './components/partners'
+import Newsletter from './components/newsletter'
+import Footer from './components/footer'
+import { Amatic_SC, Poppins, Permanent_Marker, Signika, Oleo_Script, Doto, Caveat_Brush } from 'next/font/google'
+import { Jersey_10 } from 'next/font/google'
+const permanentmarker = Permanent_Marker({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal']
+})
+const amaticsc = Amatic_SC({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal']
+})
+const signika = Signika({
+  subsets: ['latin'],
+  weight: ['600'],
+  style: ['normal']
+})
+const oleoscript = Oleo_Script({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal']
+})
+const doto = Doto({
+  subsets: ['latin'],
+  weight: ['600'],
+  style: ['normal']
+})
+const caveatbrush = Caveat_Brush({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal']
+})
 
 export default function Home() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className={`min-h-screen bg-[#0a0a0a] text-white relative overflow-hidden`}>
+      {/* Bright and Vibrant Glassmorphism Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Gradient 1: Purple */}
+        <div className="absolute -top-32 -left-32 w-[400px] h-[400px] bg-[#9b5de5]/50 rounded-full blur-[200px] animate-pulse" />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        {/* Gradient 2: Yellow */}
+        <div className="absolute -top-20 right-10 w-[500px] h-[500px] bg-[#fecd1a]/40 rounded-full blur-[150px] animate-pulse" />
+
+        {/* Gradient 3: Aqua */}
+        <div className="absolute top-1/3 -left-20 w-[350px] h-[350px] bg-[#00f5d4]/40 rounded-full blur-[180px] animate-pulse" />
+
+        {/* Gradient 4: Pink */}
+        <div className="absolute top-1/2 -right-32 w-[450px] h-[450px] bg-[#ff477e]/30 rounded-full blur-[200px] animate-pulse" />
+
+        {/* Gradient 5: Yellow */}
+        <div className="absolute bottom-16 -left-32 w-[400px] h-[400px] bg-[#fecd1a]/30 rounded-full blur-[150px] animate-pulse" />
+
+        {/* Gradient 6: Purple */}
+        <div className="absolute -bottom-32 right-10 w-[500px] h-[500px] bg-[#9b5de5]/40 rounded-full blur-[180px] animate-pulse" />
+      </div>
+
+      {/* Glass Overlay */}
+      <div className="absolute inset-0 bg-white/5 backdrop-blur-md" />
+
+      {/* Content */}
+      <div className="relative z-10">
+        <Navbar />
+
+        <main className="container mx-auto px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32">
+          {/* Hero Section */}
+          <section id="home" className="relative py-20 lg:py-32">
+            <div className="md:grid md:grid-cols-2 md:gap-12 items-center max-md:flex max-md:flex-col-reverse">
+              {/* Left Content */}
+              <div className="space-y-8">
+                <h1 className={`text-6xl lg:text-7xl font-bold leading-tight mb-6 ${caveatbrush.className}`}>
+                You Dream It.<br />I Code It.<br />We Kill It.
+                </h1>
+                <p className={`text-zinc-300 text-lg max-w-lg mb-8  ${signika.className}`}>
+                I'm Pranshu—an Allstack Web Developer, Critical Thinker, and Problem Solver. Let's turn your wildest ideas into reality.
+                </p>
+                <div className="flex gap-4">
+                  {/* Placeholder for buttons or actions */}
+                <button onClick={() => scrollToSection('connect')} className={`px-8 py-3 bg-purple-500/20 backdrop-blur-md border border-purple-300/30 hover:bg-purple-500/30 rounded-full text-purple-100 font-semibold transition-all shadow-lg flex items-center gap-2 ${signika.className}`}>
+                  <span>Let's Connect</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                  </svg>
+                </button>
+                <button onClick={() => scrollToSection('artists')} className={`px-8 py-3 bg-teal-500/20 backdrop-blur-md border border-teal-300/30 hover:bg-teal-500/30 rounded-full text-teal-100 font-semibold transition-all shadow-lg flex items-center gap-2 ${signika.className}`}>
+                  <span>View My Work</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+                  </svg>
+                </button>
+                </div>
+              </div>
+
+              {/* Right Content */}
+              <div className="relative">
+                <Image
+                  src="/pran2.png"
+                  alt="Digital Art"
+                  width={600}
+                  height={600}
+                  className="rounded-2xl"
+                />
+                <div className="absolute -top-4 -right-4 w-32 h-32 bg-[#fecd1a]/30 rounded-full blur-xl" />
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#00f5d4]/30 rounded-full blur-xl" />
+              </div>
+            </div>
+          </section>
+
+          {/* Other Sections */}
+          <section id="trending">
+            <TrendingSection />
+          </section>
+          <section id="artists">
+            <TopArtists />
+          </section>
+          <section id="connect">
+            <Stats />
+          </section>
+        </main>
+
+        <Footer />
+      </div>
     </div>
-  );
+  )
 }
