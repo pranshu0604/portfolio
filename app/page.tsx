@@ -4,32 +4,9 @@ import Navbar from './components/navbar'
 import Stats from './components/stats'
 import TrendingSection from './components/trending-section'
 import TopArtists from './components/top-artists'
-import Partners from './components/partners'
-import Newsletter from './components/newsletter'
 import Footer from './components/footer'
 import { Amatic_SC, Poppins, Permanent_Marker, Signika, Oleo_Script, Doto, Caveat_Brush } from 'next/font/google'
-import { Jersey_10 } from 'next/font/google'
-const permanentmarker = Permanent_Marker({
-  subsets: ['latin'],
-  weight: ['400'],
-  style: ['normal']
-})
-const amaticsc = Amatic_SC({
-  subsets: ['latin'],
-  weight: ['400'],
-  style: ['normal']
-})
 const signika = Signika({
-  subsets: ['latin'],
-  weight: ['600'],
-  style: ['normal']
-})
-const oleoscript = Oleo_Script({
-  subsets: ['latin'],
-  weight: ['400'],
-  style: ['normal']
-})
-const doto = Doto({
   subsets: ['latin'],
   weight: ['600'],
   style: ['normal']
@@ -79,7 +56,7 @@ export default function Home() {
 
         <main className="container mx-auto px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32">
           {/* Hero Section */}
-          <section id="home" className="relative py-20 lg:py-32">
+          <section id="home" className="relative max-lg:py-20 lg:pt-32">
             <div className="md:grid md:grid-cols-2 md:gap-12 items-center max-md:flex max-md:flex-col-reverse">
               {/* Left Content */}
               <div className="space-y-8">
