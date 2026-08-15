@@ -88,6 +88,11 @@ export default function EarlyWork() {
               nobody sees. Everything above exists because these came first.
             </p>
 
+            <p className="early-note mono">
+              Heads up — their databases are switched off now, so signing in or registering
+              will not work. The front ends still load. They are here as a record, not a demo.
+            </p>
+
             <div className="early-grid">
               {EARLY.map((e) => (
                 <a
@@ -102,7 +107,7 @@ export default function EarlyWork() {
                   <div className="early-shot">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={e.shot} alt={`${e.name} screenshot`} loading="lazy" />
-                    <span className="early-visit mono">still live ↗</span>
+                    <span className="early-visit mono">visit ↗</span>
                   </div>
                   <div className="early-body">
                     <div className="early-head">
